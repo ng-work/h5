@@ -5,3 +5,8 @@ var swiper1 = new Swiper('.xiaoxi', {
         autoheight:false,
         loop:true
     });
+$(function(){
+	$('footer').on('click','li',function(){
+		$(this).addClass('footer_bj').siblings().removeClass('footer_bj');
+	});
+});
