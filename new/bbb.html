@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		[ng-cloak]{
+			display: none;
+		}
+		table{
+			border-collapse: collapse;
+		}
+		td{
+			border: 1px solid #000;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="ctrl">
+		<table ng-cloak=''>
+			<tr>
+				<th>name</th>
+				<th>age</th>
+				<th>class</th>
+			</tr>
+			<tr ng-repeat="item in list">
+				<td>{{ item.name }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.class }}</td>
+			</tr>
+		</table>
+	</div>
+	<script src="../js/angular.js"></script>
+	<script>
+		var app=angular.module('myapp',[])
+			app.controller('ctrl',['$scope',function($scope){
+				$scope.list=[
+					{'name':"张三1",'age':121,"class":"1410FE.A"},
+					{'name':"张三2",'age':232,"class":"1410FE.b"},
+					{'name':"张三3",'age':234,"class":"1410FE.c"},
+					{'name':"张三4",'age':432,"class":"1410FE.d"}
+				]
+			}])
+	</script>
+</body>
+</html>
